@@ -1,12 +1,12 @@
 .navbar .navbar-nav .nav-item {
-    padding: 0 1em;
+    padding: 0 .6em;
 
     .nav-link {
-        font-size: 18px;
+        font-size: 16px;
         text-transform: capitalize;
         color:rgba(0, 1, 0, 0.7);
         &:hover {
-            font-weight: bold;
+            font-weight: medium;
             color: #251403;
         }
     }

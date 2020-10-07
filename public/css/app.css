@@ -17050,17 +17050,40 @@ readers do not read off random characters that represent icons */
 }
 
 .navbar .navbar-nav .nav-item {
-  padding: 0 1em;
+  padding: 0 0.6em;
 }
 
 .navbar .navbar-nav .nav-item .nav-link {
-  font-size: 18px;
+  font-size: 16px;
   text-transform: capitalize;
   color: rgba(0, 1, 0, 0.7);
 }
 
 .navbar .navbar-nav .nav-item .nav-link:hover {
-  font-weight: bold;
+  font-weight: medium;
   color: #251403;
+}
+
+.footer h4 {
+  color: #6574cd;
+}
+
+.footer ul li {
+  list-style: none;
+}
+
+.footer .social__icons {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.footer .social__icons li {
+  padding: 0 5px;
+}
+
+.footer .social__icons li .fab {
+  font-size: 25px;
+  color: #f6993f;
 }
 

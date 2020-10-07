@@ -1,18 +1,22 @@
 <header>
-    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom box-shadow mb-1"> 
         <div class="container">
             <a class="navbar-brand" href="/">GlobalOpportunities</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+            <button class="navbar-toggler" type="button" data-toggle="collapse" 
+            data-target="#navbarSupporter" aria-controls="navbarSupporter"
                     aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                <ul class="navbar-nav flex-grow-1">
-                    <li class="nav-item">
+            <div class="collapse navbar-collapse" id="navbarSupporter">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
                         <a class="nav-link" href="/">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/jobs">Job Opportunities</a>
+                        <a class="nav-link" href="/scholarships">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/jobs">Jobs</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/scholarships">Scholarships</a>
@@ -21,7 +25,7 @@
                         <a class="nav-link" href="/scholarships">Training &amp; Development</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/scholarships">Blog</a>
+                        <a class="nav-link" href="/contact">Contact</a>
                     </li>
                     {{-- <li class="nav-item">
                         <a class="nav-link btn btn-primary btn-sm text-white" href="/scholarships">Login</a>

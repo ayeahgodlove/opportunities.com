@@ -19,7 +19,7 @@
     @include('inc.navbar')
 
     {{-- Main Content --}}
-    <div class="container">
+    <div>
         @yield('content')
     </div>
 

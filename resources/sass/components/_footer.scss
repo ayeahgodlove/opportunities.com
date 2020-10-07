@@ -1,0 +1,22 @@
+.footer {
+    h4 {
+        color: $indigo;
+    }
+
+    ul li {
+        list-style: none;
+    }
+    .social__icons {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+
+        li {
+            padding: 0 5px;
+            .fab {
+                font-size: 25px;
+                color: $orange;
+            }
+        }
+    }
+}

@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+// use App\Http\Controllers\PagesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('_layout.app');
-});
+// Route::get('/', function () {
+//     return view('_layout.app');
+// });
+Route::get('/', 'App\Http\Controllers\PagesController@index');
+//Testing
+Route::get('/about', 'PagesController@about');
