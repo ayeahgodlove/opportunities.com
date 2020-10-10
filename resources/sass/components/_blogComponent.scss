@@ -1,0 +1,13 @@
+.blog__component {
+    .card {
+        img {
+            height: 150px;
+            object-fit: cover;
+        }
+
+        p {
+            font-size: 14px;
+            line-height: 1.5;
+        }
+    }
+}

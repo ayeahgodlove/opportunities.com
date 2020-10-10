@@ -1,5 +1,5 @@
 <header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom box-shadow mb-1"> 
+    <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom box-shadow"> 
         <div class="container">
             <a class="navbar-brand" href="/">GlobalOpportunities</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" 
@@ -22,7 +22,13 @@
                         <a class="nav-link" href="/scholarships">Scholarships</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/scholarships">Training &amp; Development</a>
+                        <a class="nav-link" href="/fellowships">Fellowships</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/scholarships">Training</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/search">Search</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/contact">Contact</a>

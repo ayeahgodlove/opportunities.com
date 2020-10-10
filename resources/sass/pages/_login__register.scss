@@ -1,0 +1,18 @@
+.login-signup {
+    #username,
+    #email,
+    #password,
+    #message,
+    #username:focus,
+    #email:focus, 
+    #password:focus {
+        background-position: center left;
+        background-repeat: no-repeat;
+    }
+
+    #message {
+        height: 150px !important;
+        border-radius: 25px !important;
+        padding-left: .5em !important;
+    }
+}

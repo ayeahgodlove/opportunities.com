@@ -1,13 +1,16 @@
-.navbar .navbar-nav .nav-item {
-    padding: 0 .6em;
-
-    .nav-link {
-        font-size: 16px;
-        text-transform: capitalize;
-        color:rgba(0, 1, 0, 0.7);
-        &:hover {
-            font-weight: medium;
-            color: #251403;
+.navbar {
+    z-index: 100;
+    .navbar-nav .nav-item {
+        padding: 0 .6em;
+    
+        .nav-link {
+            font-size: 16px;
+            text-transform: capitalize;
+            color:rgba(0, 1, 0, 0.7);
+            font-weight: bold;
+            &:hover {
+                color: #251403;
+            }
         }
     }
 }

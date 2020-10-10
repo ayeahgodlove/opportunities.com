@@ -1,0 +1,28 @@
+.contact-page {
+    position: relative;
+    border-radius: 30px !important;
+    top: -6em;
+    
+    @include shadow();
+    background: #ffffff;
+
+    .contact-info {
+        background: #251403 !important; 
+        border-radius: 30px;
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0px;
+        
+        color: #ffffff;
+    }
+}
+
+@media screen and (min-width: 991px) {
+    .contact-page {
+        .contact-info {
+            border-bottom-left-radius: 30px;
+            border-bottom-right-radius: 30px;
+            border-top-right-radius: 0px;
+            border-bottom-right-radius: 0px;
+        }
+    }
+}

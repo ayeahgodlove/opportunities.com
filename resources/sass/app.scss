@@ -15,6 +15,20 @@
 @import '~@fortawesome/fontawesome-free/scss/regular';
 @import '~@fortawesome/fontawesome-free/scss/solid';
 @import '~@fortawesome/fontawesome-free/scss/brands';
-//import componenta
+
+//utils
+@import 'utils/mixins';
+
+//import components
 @import 'components/navbar';
 @import 'components/footer';
+@import 'components/carousel';
+@import 'components/Form';
+@import 'components/page__banner';
+@import 'components/blogComponent';
+
+//import pages
+@import 'pages/login__register';
+@import 'pages/contact';
+
+
