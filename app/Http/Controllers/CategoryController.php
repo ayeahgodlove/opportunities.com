@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
@@ -14,7 +15,7 @@ class CategoryController extends Controller
     public function index()
     {
         //
-        return view('dashboard.categories.index');
+        return view('dashboard.categories.index')->with('categories', Category::all());
     }
 
     /**
@@ -25,6 +26,7 @@ class CategoryController extends Controller
     public function create()
     {
         //
+        return view('dashboard.categories.create');
     }
 
     /**
@@ -36,6 +38,17 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
         //
+        $this->validate($request, [
+            'name'=>'required|unique:categories'
+        ]);
+
+        Category::create([
+            'name'=> $request->name
+        ]);
+
+        session()->flash('success', 'category created successfully');
+
+        return redirect(route('categories.index'));
     }
 
     /**

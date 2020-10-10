@@ -2,6 +2,11 @@
 
 @section('content')
 <div class="container">
+    @if (session()->has('success'))
+        <div class="alert alert-success mt-3">
+            {{ session()->get('success') }}
+        </div>
+    @endif
     <div class="row justify-content-center py-5">
         {{-- sidebar --}}
         <div class="col-md-4">
