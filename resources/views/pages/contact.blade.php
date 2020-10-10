@@ -1,4 +1,4 @@
-@extends('_layout.app')
+@extends('layouts.app')
 @section('content')
     {{-- Page Banner --}}
     @include('inc.page__banner')

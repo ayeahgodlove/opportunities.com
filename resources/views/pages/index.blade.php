@@ -1,4 +1,4 @@
-@extends('_layout.app')
+@extends('layouts.app')
 @section('content')
     <div id="opportunities.com" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">

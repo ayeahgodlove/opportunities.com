@@ -21,12 +21,16 @@ Route::get('/', 'App\Http\Controllers\PagesController@index');
 //Testing
 Route::get('/about', 'App\Http\Controllers\PagesController@about');
 
-Route::get('/login', function () {
-    return view('pages.login');
-});
-Route::get('/register', function () {
-    return view('pages.register');
-});
 Route::get('/contact', function () {
     return view('pages.contact');
 });
+Route::get('/search', function () {
+    return view('pages.search');
+});
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\DashboardController::class, 'index'])->name('Dashboard');
+
+// categories
+Route::resource('categories', 'App\Http\Controllers\CategoryController');
+Route::resource('posts', 'App\Http\Controllers\PostController');

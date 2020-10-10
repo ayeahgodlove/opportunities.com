@@ -1,4 +1,4 @@
-@extends('_layout.app')
+@extends('layouts.app')
 @section('content')
     <div class="container-fluid px-5 px-md-0 login">
         <div class="row align-items-center bg-white">

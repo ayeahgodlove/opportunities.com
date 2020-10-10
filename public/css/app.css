@@ -17238,6 +17238,10 @@ input {
   line-height: 1.5;
 }
 
+.search {
+  margin-top: -9em;
+}
+
 .login-signup #username,
 .login-signup #email,
 .login-signup #password,
