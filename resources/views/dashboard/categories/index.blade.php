@@ -19,8 +19,13 @@
                             <td><a href="{{route('categories.edit', $category->id)}}" 
                                 class="btn btn-info btn-sm"> <span class="fas fa-edit"></span></a></td>
                             <td>
-                                <a href="{{route('categories.destroy', $category->id)}}"
-                                    class="btn btn-danger btn-sm"><span class="fas fa-bin"></span>delete</a>
+                                <form action="{{route('categories.destroy', $category->id)}}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button class="btn btn-danger btn-sm">
+                                        <span class="fas fa-trash"></span>
+                                    </button>
+                                </form>
                             </td>
                         </tr>
                     @endforeach

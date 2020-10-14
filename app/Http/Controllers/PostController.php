@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Post;
 use Illuminate\Http\Request;
+use App\Http\Requests\Posts\CreatePostRequest;
+use App\Http\Requests\Posts\UpdatePostRequest;
 
 class PostController extends Controller
 {
@@ -13,8 +16,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        //
-        return view('dashboard.posts.index');
+        return view('dashboard.posts.index')->with('posts', Post::all());
     }
 
     /**
@@ -33,9 +35,21 @@ class PostController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreatePostRequest $request)
     {
-        //
+        $image = $request->image->store('posts');
+        Post::create([
+            'title' => $request->title,
+            'description' => $request->description,
+            'content' => $request->content,
+            'image' => $image,
+            'link' => $request->link,
+            'published_at' => $request->published_at
+        ]);
+
+        session()->flash('success', 'Post created successfully.');
+
+        return redirect(route('posts.index'));
     }
 
     /**
@@ -55,9 +69,9 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Post $post)
     {
-        //
+        return view('dashboard.posts.create')->with('post', $post);
     }
 
     /**
@@ -67,9 +81,21 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UpdatePostRequest $request, Post $post)
     {
-        //
+        $image = $request->image->store('posts');
+        $post->update([
+            'title' => $request->title,
+            'description' => $request->description,
+            'content' => $request->content,
+            'image' => $image,
+            'link' => $request->link,
+            'published_at' => $request->published_at
+        ]);
+
+        session()->flash('success', 'Post Updated Successfully');
+        
+        return redirect(route('posts.index'));
     }
 
     /**
@@ -80,6 +106,11 @@ class PostController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $post = Post::find($id);
+        $post->delete();
+
+        session()->flash('success', 'Post deleted successfully.');
+        
+        return redirect(route('posts.index'));
     }
 }
