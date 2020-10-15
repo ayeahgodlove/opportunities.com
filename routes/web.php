@@ -33,7 +33,8 @@ Route::middleware(['auth'])->group(function(){
     Route::get('/home', [App\Http\Controllers\DashboardController::class, 'index'])->name('Dashboard');
     // categories
     Route::resource('categories', 'App\Http\Controllers\CategoryController');
-    Route::resource('posts', 'App\Http\Controllers\PostController')->middleware('auth');
-    Route::get('trashed-posts', 'App\Http\Controllers\PostController@trashed')->name('trashed-posts.index');
+    Route::resource('posts', 'App\Http\Controllers\PostController');
+    Route::resource('tags', 'App\Http\Controllers\TagsController');
+    // Route::get('posts', 'App\Http\Controllers\PostController@trashed');
     Route::put('restore-posts/{post}', 'App\Http\Controllers\PostController@restore')->name('restore-posts');
 });

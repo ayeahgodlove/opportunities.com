@@ -24,13 +24,8 @@
                     <li class="list-group-item">
                         <a href="{{route('categories.index')}}">Categories</a>
                     </li>
-                </ul>
-            </div>
-
-            <div class="card mt-3">
-                <ul class="list-group">
                     <li class="list-group-item">
-                        <a href="posts/trash">Trash Posts</a>
+                        <a href="{{route('tags.index')}}">Tags</a>
                     </li>
                 </ul>
             </div>
@@ -39,6 +34,7 @@
         <div class="col-md-8 mt-3 mt-md-0">
             @yield('categories')
             @yield('posts')
+            @yield('tags')
         </div>
     </div>
 </div>

@@ -135,7 +135,8 @@ class PostController extends Controller
 
     public function trashed()
     {
-        $trashed = Post::withTrashed()->get();
-        return view('dashboard.posts.index')->with('posts', $trashed);
+        // $trashed = Post::withTrashed()->get();
+        // return view('dashboard.posts.trashed')->with('posts', $trashed);
+        // return view('dashboard.posts.trashed');
     }
 }

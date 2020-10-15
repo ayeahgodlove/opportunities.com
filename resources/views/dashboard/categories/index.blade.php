@@ -3,7 +3,7 @@
     <div class="card">
         <div class="card-header d-flex justify-content-between">
             <h5>{{ __('Categories') }}</h5>
-            <a href="{{route('categories.create')}}" class="btn btn-success btn-sm">Add Category</a>
+            <a href="{{ route('categories.create') }}" class="btn btn-success btn-sm">Add Category</a>
         </div>
         <div class="card-body">
             <table class="table">
@@ -16,12 +16,12 @@
                 <tbody>
                     @foreach ($categories as $category)
                         <tr>
-                            <td>{{$category->name}}</td>
-                            <td>{{$category->posts->count()}}</td>
-                            <td><a href="{{route('categories.edit', $category->id)}}" 
-                                class="btn btn-info btn-sm"> <span class="fas fa-edit"></span></a></td>
+                            <td>{{ $category->name }}</td>
+                            <td>{{ $category->posts->count() }}</td>
+                            <td><a href="{{ route('categories.edit', $category->id) }}" class="btn btn-info btn-sm"> <span
+                                        class="fas fa-edit"></span></a></td>
                             <td>
-                                <form action="{{route('categories.destroy', $category->id)}}" method="POST">
+                                <form action="{{ route('categories.destroy', $category->id) }}" method="POST" id="deleteCategoryForm">
                                     @csrf
                                     @method('DELETE')
                                     <button class="btn btn-danger btn-sm">
@@ -35,4 +35,14 @@
             </table>
         </div>
     </div>
+@endsection
+
+@section('scripts')
+    {{-- <script>
+        function handleDelete() {
+            var form =  document.getElementById('deleteCategoryForm');
+            form.action = '/tags/' + id;
+            $('#deleteModal').modal('show');
+        }
+    </script> --}}
 @endsection
