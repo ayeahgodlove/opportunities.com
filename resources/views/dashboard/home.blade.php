@@ -7,6 +7,12 @@
             {{ session()->get('success') }}
         </div>
     @endif
+
+    @if (session()->has('error'))
+    <div class="alert alert-danger mt-3">
+        {{ session()->get('error') }}
+    </div>
+@endif
     <div class="row justify-content-center py-5">
         {{-- sidebar --}}
         <div class="col-md-4">

@@ -36,10 +36,6 @@
 
                 <div class="form-group">
                     <label for="content">Content</label>
-                    {{-- <textarea name="content" class="form-control" id="content" cols="5"
-                        rows="5">
-                    {{ isset($post) ? $post->content : '' }}
-                    </textarea> --}}
                     <input id="content" type="hidden" name="content" value="{{ isset($post) ? $post->content : '' }}" />
                     <trix-editor input="content"></trix-editor>
                 </div>
@@ -50,27 +46,28 @@
                 </div>
 
                 <div class="form-group">
-                    <div class="card" style="height: 400px">
-                        <img alt="" src="{{ isset($post) ? asset('storage/' . $post->image) : '' }}"
-                        style="height: 400px; object-fit: cover;" class="card-img-top">
-                    </div>
+                    @if (isset($post))
+                        <div class="card" style="height: 400px">
+                            <img alt="" src="{{ asset('storage/' . $post->image) }}"
+                                style="height: 400px; object-fit: cover;" class="card-img-top">
+                        </div>
+                    @endif
                     <label for="image">Image</label>
-                    <input type="file" name="image" id="image" class="form-control"/>
+                    <input type="file" name="image" id="image" class="form-control" />
                 </div>
 
                 <div class="form-group">
                     <label for="category">Category</label>
                     <select name="category" id="category" class="form-control">
                         @foreach ($categories as $category)
-                            <option value="{{$category->id}}" 
-                                @if(isset($post))
-                                    @if($category->id == $post->category_id)
-                                        selected
-                                    @endif
+                            <option value="{{ $category->id }}" @if (isset($post))
+                                @if ($category->id == $post->category_id)
+                                    selected
                                 @endif
-                                >
-                                {{$category->name}}
-                            </option>
+                        @endif
+                        >
+                        {{ $category->name }}
+                        </option>
                         @endforeach
                     </select>
                 </div>

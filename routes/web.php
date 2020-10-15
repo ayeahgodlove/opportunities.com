@@ -29,10 +29,11 @@ Route::get('/search', function () {
 });
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\DashboardController::class, 'index'])->name('Dashboard');
-
-// categories
-Route::resource('categories', 'App\Http\Controllers\CategoryController');
-Route::resource('posts', 'App\Http\Controllers\PostController')->middleware('auth');
-Route::get('trashed-posts', 'App\Http\Controllers\PostController@trashed')->name('trashed-posts.index');
-Route::put('restore-posts/{post}', 'App\Http\Controllers\PostController@restore')->name('restore-posts');
+Route::middleware(['auth'])->group(function(){
+    Route::get('/home', [App\Http\Controllers\DashboardController::class, 'index'])->name('Dashboard');
+    // categories
+    Route::resource('categories', 'App\Http\Controllers\CategoryController');
+    Route::resource('posts', 'App\Http\Controllers\PostController')->middleware('auth');
+    Route::get('trashed-posts', 'App\Http\Controllers\PostController@trashed')->name('trashed-posts.index');
+    Route::put('restore-posts/{post}', 'App\Http\Controllers\PostController@restore')->name('restore-posts');
+});
