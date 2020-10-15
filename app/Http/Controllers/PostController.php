@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use App\Models\Category;
+use App\Models\Tag;
 use Illuminate\Http\Request;
 use App\Http\Requests\Posts\CreatePostRequest;
 use App\Http\Requests\Posts\UpdatePostRequest;
@@ -31,7 +32,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        return view('dashboard.posts.create')->with('categories', Category::all());
+        return view('dashboard.posts.create')->with('categories', Category::all())->with('tags', Tag::all());
     }
 
     /**
@@ -43,7 +44,7 @@ class PostController extends Controller
     public function store(CreatePostRequest $request) 
     {
         $image = $request->image->store('posts');
-        Post::create([
+        $post = Post::create([
             'title' => $request->title,
             'description' => $request->description,
             'content' => $request->content,
@@ -52,6 +53,10 @@ class PostController extends Controller
             'category_id' => $request->category,
             'published_at' => $request->published_at
         ]);
+
+        if($request->tags){
+            $post->tags()->attach($request->tags);
+        }
 
         session()->flash('success', 'Post created successfully.');
 
@@ -77,7 +82,7 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
-        return view('dashboard.posts.create')->with('post', $post)->with('categories', Category::all());
+        return view('dashboard.posts.create')->with('post', $post)->with('categories', Category::all())->with('tags', Tag::all());
     }
 
     /**
@@ -90,6 +95,9 @@ class PostController extends Controller
     public function update(UpdatePostRequest $request, Post $post)
     {
         $image = $request->image->store('posts');
+        if($request->tags) {
+            $post->tags()->sync($request->tags);
+        }
         $post->update([
             'title' => $request->title,
             'description' => $request->description,

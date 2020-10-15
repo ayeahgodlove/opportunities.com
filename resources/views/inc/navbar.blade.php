@@ -60,6 +60,8 @@
                                     {{ __('Logout') }}
                                 </a>
 
+                                <a href="/account" class="dropdown-item">{{__('My Account')}}</a>
+
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                     @csrf
                                 </form>

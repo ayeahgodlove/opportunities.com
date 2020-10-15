@@ -5,15 +5,9 @@
             <h5>{{ isset($post) ? 'Edit Post' : 'Create Post' }}</h5>
         </div>
         <div class="card-body">
-            @if ($errors->any())
-                <div class="alert alert-danger">
-                    <ul class="list-group">
-                        @foreach ($errors->all() as $err)
-                            <li class="list-group-item text-danger">{{ $err }}</li>
-                        @endforeach
-                    </ul>
-                </div>
-            @endif
+            {{-- check for errors --}}
+            @include('inc._partials.errors')
+
             <form action="{{ isset($post) ? route('posts.update', $post->id) : route('posts.store') }}" method="POST"
                 enctype="multipart/form-data">
                 @csrf
@@ -42,7 +36,7 @@
 
                 <div class="form-group">
                     <label for="published_at">Published At</label>
-                    <input type="text" name="published_at" id="published_at" class="form-control" />
+                    <input type="text" name="published_at" id="published_at" class="form-control" value="{{$post->published_at}}" />
                 </div>
 
                 <div class="form-group">
@@ -56,6 +50,7 @@
                     <input type="file" name="image" id="image" class="form-control" />
                 </div>
 
+                {{-- categories --}}
                 <div class="form-group">
                     <label for="category">Category</label>
                     <select name="category" id="category" class="form-control">
@@ -71,6 +66,24 @@
                         @endforeach
                     </select>
                 </div>
+
+                {{-- Tag labes --}}
+                @if ($tags->count() > 0)
+                    <div class="form-group">
+                        <label for="tags">Tags</label>
+                        <select name="tags[]" id="tags" class="form-control" multiple>
+                            @foreach ($tags as $tag)
+                                <option value="{{ $tag->id }}"
+                                   @if (isset($post))
+                                    @if ($post->hasTag($tag->id)))
+                                        selected
+                                    @endif
+                                   @endif
+                                    >{{ $tag->name }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                @endif
 
                 <div class="form-group">
                     <label for="link">Website Links</label>

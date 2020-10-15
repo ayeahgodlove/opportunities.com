@@ -5,15 +5,8 @@
         <h5>{{ isset($tag) ? 'Edit Tag' : 'Create Tag'}}</h5>
     </div>
     <div class="card-body">
-        @if ($errors->any())
-            <div class="alert alert-danger">
-                <ul class="list-group">
-                    @foreach ($errors->all() as $err)
-                       <li class="list-group-item text-danger">{{$err}}</li>  
-                    @endforeach
-                </ul>
-            </div>
-        @endif
+        {{-- check for errors --}}
+        @include('inc._partials.errors')
         <form action="{{isset($tag) ? route('tags.update', $tag->id) : route('tags.store')}}" method="POST">
             @csrf
             @if (isset($tag))

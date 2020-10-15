@@ -27,6 +27,9 @@ Route::get('/contact', function () {
 Route::get('/search', function () {
     return view('pages.search');
 });
+Route::get('/account', function () {
+    return view('dashboard.account.index');
+});
 Auth::routes();
 
 Route::middleware(['auth'])->group(function(){
