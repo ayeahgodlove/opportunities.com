@@ -18,6 +18,12 @@
             <div class="col-md-4">
                 <div class="card">
                     <ul class="list-group">
+                        {{-- users link is only accessible by admins --}}
+                        @if (auth()->user()->isAdmin())
+                            <li class="list-group-item">
+                                <a href="/users">Users</a>
+                            </li>
+                        @endif
                         <li class="list-group-item">
                             <a href="{{ route('posts.index') }}">Post</a>
                         </li>
@@ -36,6 +42,7 @@
                 @yield('posts')
                 @yield('tags')
                 @yield('account')
+                @yield('users')
             </div>
         </div>
     </div>

@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-// use App\Http\Controllers\PagesController;
+use App\Http\Controllers\PagesController;
+use App\Http\Controllers\UsersController;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,4 +41,10 @@ Route::middleware(['auth'])->group(function(){
     Route::resource('tags', 'App\Http\Controllers\TagsController');
     // Route::get('posts', 'App\Http\Controllers\PostController@trashed');
     Route::put('restore-posts/{post}', 'App\Http\Controllers\PostController@restore')->name('restore-posts');
+});
+
+//users route
+Route::middleware(['auth', 'admin'])->group(function(){
+    Route::get('users', 'App\Http\Controllers\UsersController@index');
+    Route::post('users/{user}/make-admin', 'App\Http\Controllers\UsersController@makeAdmin')->name('users.make-admin');
 });
