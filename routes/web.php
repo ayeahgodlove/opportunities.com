@@ -33,4 +33,6 @@ Route::get('/home', [App\Http\Controllers\DashboardController::class, 'index'])-
 
 // categories
 Route::resource('categories', 'App\Http\Controllers\CategoryController');
-Route::resource('posts', 'App\Http\Controllers\PostController');
+Route::resource('posts', 'App\Http\Controllers\PostController')->middleware('auth');
+Route::get('trashed-posts', 'App\Http\Controllers\PostController@trashed')->name('trashed-posts.index');
+Route::put('restore-posts/{post}', 'App\Http\Controllers\PostController@restore')->name('restore-posts');

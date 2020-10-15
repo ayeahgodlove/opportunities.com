@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Http\Requests\Posts\CreatePostRequest;
 use App\Http\Requests\Posts\UpdatePostRequest;
@@ -26,7 +27,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        return view('dashboard.posts.create');
+        return view('dashboard.posts.create')->with('categories', Category::all());
     }
 
     /**
@@ -44,6 +45,7 @@ class PostController extends Controller
             'content' => $request->content,
             'image' => $image,
             'link' => $request->link,
+            'category_id' => $request->category,
             'published_at' => $request->published_at
         ]);
 
@@ -71,7 +73,7 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
-        return view('dashboard.posts.create')->with('post', $post);
+        return view('dashboard.posts.create')->with('post', $post)->with('categories', Category::all());
     }
 
     /**
@@ -90,6 +92,7 @@ class PostController extends Controller
             'content' => $request->content,
             'image' => $image,
             'link' => $request->link,
+            'category_id' => $request->category,
             'published_at' => $request->published_at
         ]);
 
@@ -103,6 +106,7 @@ class PostController extends Controller
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
+     * To fix softdelete and restore
      */
     public function destroy($id)
     {

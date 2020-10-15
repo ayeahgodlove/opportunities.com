@@ -40,7 +40,7 @@
                         rows="5">
                     {{ isset($post) ? $post->content : '' }}
                     </textarea> --}}
-                    <input id="content" type="hidden" name="content" />
+                    <input id="content" type="hidden" name="content" value="{{ isset($post) ? $post->content : '' }}" />
                     <trix-editor input="content"></trix-editor>
                 </div>
 
@@ -50,8 +50,29 @@
                 </div>
 
                 <div class="form-group">
+                    <div class="card" style="height: 400px">
+                        <img alt="" src="{{ isset($post) ? asset('storage/' . $post->image) : '' }}"
+                        style="height: 400px; object-fit: cover;" class="card-img-top">
+                    </div>
                     <label for="image">Image</label>
-                    <input type="file" name="image" id="image" class="form-control" />
+                    <input type="file" name="image" id="image" class="form-control"/>
+                </div>
+
+                <div class="form-group">
+                    <label for="category">Category</label>
+                    <select name="category" id="category" class="form-control">
+                        @foreach ($categories as $category)
+                            <option value="{{$category->id}}" 
+                                @if(isset($post))
+                                    @if($category->id == $post->category_id)
+                                        selected
+                                    @endif
+                                @endif
+                                >
+                                {{$category->name}}
+                            </option>
+                        @endforeach
+                    </select>
                 </div>
 
                 <div class="form-group">
@@ -77,9 +98,10 @@
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 
     <script>
-        flatpickr('#published_at',{
+        flatpickr('#published_at', {
             enableTime: true
         });
+
     </script>
 @endsection
 

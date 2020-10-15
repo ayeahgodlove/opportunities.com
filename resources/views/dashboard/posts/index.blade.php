@@ -10,21 +10,28 @@
                 <p class="text-center">Available Posts</p>
             </div>
             <div class="row mb-2">
-                <div class="col-md-4 d-none d-md-block"><b>Image</b></div>
-                <div class="col-md-6 d-none d-md-block"><b>Title</b></div>
-                <div class="col-md-2 d-none d-md-block"><b>Option</b></div>
+                <div class="col-md-3 d-none d-md-block"><b>Image</b></div>
+                <div class="col-md-5 d-none d-md-block"><b>Title</b></div>
+                <div class="col-md-2 d-none d-md-block"><b>Category</b></div>
+                <div class="col-md-2 d-none d-md-block"><b></b></div>
             </div>
             @foreach ($posts as $post)
                 <div class="row align-items-start justify-content-center">
-                    <div class="col-10 col-md-4">
+                    <div class="col-10 col-md-3">
                         <div class="card" style="height: 100px">
                             <img src="{{ asset('storage/' . $post->image) }}" style="height: 100px; object-fit: cover;"
                                 class="card-img-top" alt="{{ $post->title }}">
                         </div>
                     </div>
 
-                    <div class="col-10 col-md-6">
+                    <div class="col-10 col-md-5">
                         {{ $post->title }}
+                    </div>
+
+                    <div class="col-10 col-md-2">
+                        <a href="{{route('categories.edit', $post->category->id)}}" class="nav-link p-0">
+                            <b>{{ $post->category->name }}</b>
+                        </a>
                     </div>
 
                     <div class="col-10 col-md-2">
