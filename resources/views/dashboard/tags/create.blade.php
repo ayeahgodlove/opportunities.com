@@ -1,5 +1,5 @@
 @extends('dashboard.home')
-@section('tags')
+@section('content1')
 <div class="card">
     <div class="card-header d-flex justify-content-between"> 
         <h5>{{ isset($tag) ? 'Edit Tag' : 'Create Tag'}}</h5>

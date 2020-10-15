@@ -1,5 +1,5 @@
 @extends('dashboard.home')
-@section('users')
+@section('content1')
     <div class="card">
         <div class="card-header d-flex justify-content-between">
             <h5>{{ __('Users') }}</h5>

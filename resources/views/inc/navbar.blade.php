@@ -55,12 +55,11 @@
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                <a href="{{route('users.edit-profile')}}" class="dropdown-item">{{__('My Profile')}}</a>
                                 <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                          document.getElementById('logout-form').submit();">
                                     {{ __('Logout') }}
-                                </a>
-
-                                <a href="/account" class="dropdown-item">{{__('My Account')}}</a>
+                                </a> 
 
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                     @csrf

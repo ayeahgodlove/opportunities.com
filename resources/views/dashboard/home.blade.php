@@ -38,11 +38,7 @@
             </div>
 
             <div class="col-md-8 mt-3 mt-md-0">
-                @yield('categories')
-                @yield('posts')
-                @yield('tags')
-                @yield('account')
-                @yield('users')
+                @yield('content1')
             </div>
         </div>
     </div>

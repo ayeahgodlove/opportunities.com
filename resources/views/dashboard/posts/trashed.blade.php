@@ -1,5 +1,5 @@
 @extends('dashboard.home')
-@section('trashed-posts')
+@section('content1')
     <div class="card">
         <div class="card-header d-flex justify-content-between"> 
             <h5>{{ ('Trashed Posts') }}</h5>
