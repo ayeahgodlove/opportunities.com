@@ -31,8 +31,8 @@
         </div>
 
         <div class="col-md-8 mt-3 mt-md-0">
-            @yield('posts')
             @yield('categories')
+            @yield('posts')
         </div>
     </div>
 </div>

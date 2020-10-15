@@ -35,7 +35,7 @@ class PostController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(CreatePostRequest $request)
+    public function store(CreatePostRequest $request) 
     {
         $image = $request->image->store('posts');
         Post::create([
@@ -106,11 +106,28 @@ class PostController extends Controller
      */
     public function destroy($id)
     {
+        //we want to trash the post first
+        /* $post = Post::withTrashed()->where('id', $id)->firstOrFail();
+
+        if($post->trashed()){
+            $post->forceDelete();
+        }
+        else {
+            $post->delete();
+        } 
+        */
         $post = Post::find($id);
         $post->delete();
 
         session()->flash('success', 'Post deleted successfully.');
         
         return redirect(route('posts.index'));
+    }
+
+
+    public function trashed()
+    {
+        $trashed = Post::withTrashed()->get();
+        return view('dashboard.posts.index')->with('posts', $trashed);
     }
 }
