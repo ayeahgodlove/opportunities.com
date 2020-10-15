@@ -1,13 +1,23 @@
 .blog__component {
     .card {
+        position: relative;
         img {
             height: 150px;
             object-fit: cover;
         }
-
-        p {
-            font-size: 14px;
-            line-height: 1.5;
+        .card-title {
+            position: absolute;
+            vertical-align: middle;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            top: 30%;
+            bottom: 50%;
+            left: 35%;
+            padding: .23em 1em;
+            background: #200e01;
+            color: #fff;
         }
+
     }
 }

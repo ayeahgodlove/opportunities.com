@@ -1,6 +1,5 @@
 <header>
-
-    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+    <nav class="navbar navbar-expand-lg navbar-light navbar-stick-dark shadow-sm" data-navbar="sticky">
         <div class="container">
             <a class="navbar-brand" href="{{ url('/') }}">
                 {{ config('app.name', 'GlobalOpportunities') }}

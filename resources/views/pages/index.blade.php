@@ -50,9 +50,11 @@
             <h2 class="text-center">Here are some opportunities for you</h2>
         </div>
         <div class="row justify-content-center mb-lg-5">
-            <?php for($count = 0; $count < 4; $count++): ?>
+            @if ($posts->count() > 0)
                 @include('inc.blogComponent')
-            <?php endfor; ?>
+            @else
+                <h4 class="text-center display-4">No Posts Available at the moment</h4>
+            @endif
         </div>
     </div>
 @endsection

@@ -17227,15 +17227,28 @@ input {
   background: rgba(37, 20, 3, 0.6);
 }
 
+.blog__component .card {
+  position: relative;
+}
+
 .blog__component .card img {
   height: 150px;
   -o-object-fit: cover;
      object-fit: cover;
 }
 
-.blog__component .card p {
-  font-size: 14px;
-  line-height: 1.5;
+.blog__component .card .card-title {
+  position: absolute;
+  vertical-align: middle;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 30%;
+  bottom: 50%;
+  left: 35%;
+  padding: 0.23em 1em;
+  background: #200e01;
+  color: #fff;
 }
 
 .search {

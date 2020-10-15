@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PagesController;
+use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\UsersController;
 
 /*
@@ -18,7 +19,7 @@ use App\Http\Controllers\UsersController;
 // Route::get('/', function () {
 //     return view('_layout.app');
 // });
-Route::get('/', 'App\Http\Controllers\PagesController@index');
+Route::get('/', 'App\Http\Controllers\WelcomeController@index');
 //Testing
 Route::get('/about', 'App\Http\Controllers\PagesController@about');
 
