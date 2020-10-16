@@ -1,14 +1,23 @@
-@foreach ($posts as $post)
-    <div class="col-11 col-sm-6 col-md-4 col-lg-3 blog__component mb-3 pl-lg-0">
-        <div class="card">
-            <img src="{{ asset('storage/'.$post->image) }}" alt="" class="img-card-top">
-            <div class="card-body text-center py-3 px-3">
-                <h6 class="card-title text-lighter text-uppercase small">{{$post->category->name}}</h6>
-                <div class="card-text">
-                    <p><strong>{{$post->title}}</strong></p>
-                    <a href="" class="nav-link text-info text-center p-0">Find out <span class="fas fa-arrow-right"></span></a>
+    <div class="col-md-8 col-xl-9 mx-auto blog__component">
+        @foreach ($posts as $post)
+            <div class="card hover-shadow-7 my-8">
+                <div class="row">
+                    <div class="col-md-4">
+                        <a href="{{route('blog.show', $post->id)}}">
+                            <img class="img-fluid fit-cover position-absolute h-100"
+                                src="{{ asset('storage/' . $post->image) }}" alt="{{$post->title}}">
+                        </a>
+                    </div>
+
+                    <div class="col-md-8">
+                        <div class="p-7">
+                            <h4>{{ $post->title }}</h4>
+                            <p>{{ $post->description }}</p>
+                            <a class="small ls-1" href="{{route('blog.show', $post->id)}}">Read More <span
+                                    class="pl-1">&xrarr;</span></a>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
+        @endforeach
     </div>
-@endforeach

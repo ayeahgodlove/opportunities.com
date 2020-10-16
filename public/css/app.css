@@ -17227,32 +17227,129 @@ input {
   background: rgba(37, 20, 3, 0.6);
 }
 
-.blog__component .card {
+.card {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 0 solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
 }
 
-.blog__component .card img {
-  height: 150px;
+.card-body {
+  flex: 1 1 auto;
+  padding: 1.25rem;
+}
+
+.card-title {
+  margin-bottom: 0.75rem;
+}
+
+.card-subtitle {
+  margin-top: -0.375rem;
+  margin-bottom: 0;
+}
+
+.card-text:last-child {
+  margin-bottom: 0;
+}
+
+.card-link:hover {
+  text-decoration: none;
+}
+
+.card-link + .card-link {
+  margin-left: 1.25rem;
+}
+
+.shadow-7,
+.hover-shadow-7:hover {
+  box-shadow: 0 0 48px rgba(0, 0, 0, 0.06);
+}
+
+.mt-8,
+.my-8 {
+  margin-top: 5rem !important;
+}
+
+.mr-8,
+.mx-8 {
+  margin-right: 5rem !important;
+}
+
+.mb-8,
+.my-8 {
+  margin-bottom: 5rem !important;
+}
+
+.ml-8,
+.mx-8 {
+  margin-left: 5rem !important;
+}
+
+.fit-cover {
   -o-object-fit: cover;
      object-fit: cover;
 }
 
-.blog__component .card .card-title {
-  position: absolute;
-  vertical-align: middle;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  top: 30%;
-  bottom: 50%;
-  left: 35%;
-  padding: 0.23em 1em;
-  background: #200e01;
-  color: #fff;
+.p-7 {
+  padding: 3rem !important;
+}
+
+.ls-1,
+.letter-spacing-1 {
+  letter-spacing: 1px;
 }
 
 .search {
   margin-top: -9em;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  padding-top: 7rem;
+  padding-bottom: 7rem;
+}
+
+.sidebar hr {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  border-top-style: solid;
+}
+
+@media (max-width: 991.98px) {
+  .sidebar {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+}
+
+.sidebar-title {
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-size: 0.85em;
+  margin-bottom: 1rem;
+}
+
+.w-65px {
+  width: 65px !important;
+}
+
+.media-body {
+  flex: 1;
+}
+
+.lh-4 {
+  line-height: 1.6;
+}
+
+.small-2 {
+  font-size: 0.82031rem !important;
 }
 
 .login-signup #username,

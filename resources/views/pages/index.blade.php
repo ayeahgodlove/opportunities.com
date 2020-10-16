@@ -1,4 +1,7 @@
 @extends('layouts.app')
+@section('title')
+    {{ config('app.name', 'GlobalOpportunities') }}
+@endsection
 @section('content')
     <div id="opportunities.com" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
@@ -46,12 +49,13 @@
 
     {{-- opportunities --}}
     <div class="container">
-        <div class="row justify-content-center my-3 my-lg-5">
+        {{-- <div class="row justify-content-center my-3 my-lg-5">
             <h2 class="text-center">Here are some opportunities for you</h2>
-        </div>
-        <div class="row justify-content-center mb-lg-5">
+        </div> --}}
+        <div class="row justify-content-center my-3 my-lg-5">
             @if ($posts->count() > 0)
                 @include('inc.blogComponent')
+                @include('inc.sidenav')
             @else
                 <h4 class="text-center display-4">No Posts Available at the moment</h4>
             @endif

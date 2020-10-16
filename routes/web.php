@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\UsersController;
+use App\Http\Controllers\Blog\PostsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,7 +21,9 @@ use App\Http\Controllers\UsersController;
 //     return view('_layout.app');
 // });
 Route::get('/', 'App\Http\Controllers\WelcomeController@index');
-//Testing
+
+Route::get('blog/posts/{post}', [App\Http\Controllers\Blog\PostsController::class, 'show'])->name('blog.show');
+
 Route::get('/about', 'App\Http\Controllers\PagesController@about');
 
 Route::get('/contact', function () {
