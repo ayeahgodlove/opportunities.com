@@ -123,29 +123,11 @@ class PostController extends Controller
      */
     public function destroy($id)
     {
-        //we want to trash the post first
-        /* $post = Post::withTrashed()->where('id', $id)->firstOrFail();
-
-        if($post->trashed()){
-            $post->forceDelete();
-        }
-        else {
-            $post->delete();
-        } 
-        */
         $post = Post::find($id);
         $post->delete();
 
         session()->flash('success', 'Post deleted successfully.');
         
         return redirect(route('posts.index'));
-    }
-
-
-    public function trashed()
-    {
-        // $trashed = Post::withTrashed()->get();
-        // return view('dashboard.posts.trashed')->with('posts', $trashed);
-        // return view('dashboard.posts.trashed');
     }
 }

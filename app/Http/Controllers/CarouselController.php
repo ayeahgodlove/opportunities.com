@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Carousel;
+use App\Http\Requests\Carousel\CreateCarouselRequest;
+use App\Http\Requests\Carousel\UpdateCarouselRequest;
 
 class CarouselController extends Controller
 {
@@ -13,7 +16,7 @@ class CarouselController extends Controller
      */
     public function index()
     {
-        //
+        return view('dashboard.carousel.index')->with('carousel', Carousel::all());
     }
 
     /**
@@ -23,7 +26,7 @@ class CarouselController extends Controller
      */
     public function create()
     {
-        //
+        return view('dashboard.carousel.create');
     }
 
     /**
@@ -32,9 +35,18 @@ class CarouselController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreateCarouselRequest $request)
     {
-        //
+        $image = $request->image->store('carousels');
+        $carousel = Carousel::create([
+            'title' => $request->title,
+            'caption' => $request->caption,
+            'image' => $image,
+        ]);
+
+        session()->flash('success', 'Carousel Added successfully.');
+
+        return redirect(route('carousel.index'));
     }
 
     /**
@@ -54,9 +66,9 @@ class CarouselController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Carousel $carousel)
     {
-        //
+        return view('dashboard.carousel.create')->with('carousel', $carousel);
     }
 
     /**
@@ -66,9 +78,18 @@ class CarouselController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UpdateCarouselRequest $request, Carousel $carousel) 
     {
-        //
+        $image = $request->image->store('carousels');
+        $carousel->update([
+            'title' => $request->title,
+            'caption' => $request->caption,
+            'image' => $image,
+        ]);
+
+        session()->flash('success', 'Carousel Banner Updated Successfully');
+        
+        return redirect(route('carousel.index'));
     }
 
     /**
@@ -79,6 +100,11 @@ class CarouselController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $carousel = Carousel::find($id);
+        $carousel->delete();
+
+        session()->flash('success', 'Post deleted successfully.');
+        
+        return redirect(route('carousel.index'));
     }
 }

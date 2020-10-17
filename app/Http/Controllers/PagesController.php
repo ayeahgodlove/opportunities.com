@@ -33,4 +33,12 @@ class PagesController extends Controller
         ->with('posts', Post::all())
         ->with('tags', Tag::all());
     }
+
+    public function miscellaneous()
+    {
+        return view('pages.miscellaneous')
+        ->with('categories', Category::all())
+        ->with('posts', Post::all())
+        ->with('tags', Tag::all());
+    }
 }

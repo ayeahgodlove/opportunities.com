@@ -35,6 +35,14 @@
                         </li>
                     </ul>
                 </div>
+
+                <div class="card mt-3">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <a href="{{ route('carousel.index') }}">Carousel</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
 
             <div class="col-md-8 mt-3 mt-md-0">
