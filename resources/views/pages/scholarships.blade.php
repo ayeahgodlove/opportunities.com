@@ -12,7 +12,7 @@
                     @else
                         <div class="card">
                             <div class="card-body">
-                                <h3>Jobs not available at the moment</h3>
+                                <h3>Scholarship not available at the moment</h3>
                             </div>
                         </div>
                     @endif

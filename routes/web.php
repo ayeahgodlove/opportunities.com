@@ -52,3 +52,7 @@ Route::middleware(['auth', 'admin'])->group(function(){
 Route::get('/jobs', 'App\Http\Controllers\PagesController@jobs');
 Route::get('/scholarships', 'App\Http\Controllers\PagesController@scholarships');
 Route::get('/competitions', 'App\Http\Controllers\PagesController@competitions');
+
+
+// Home Page carousel
+Route::resource('carousel', 'App\Http\Controllers\CarouselController');
