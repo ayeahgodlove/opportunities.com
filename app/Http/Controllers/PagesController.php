@@ -3,17 +3,34 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Category;
+use App\Models\Post;
+use App\Models\Tag;
 
 class PagesController extends Controller
 {
     //
-    public function index(){
-        return view('pages.index');
+    public function jobs()
+    {
+        return view('pages.jobs')
+        ->with('categories', Category::all())
+        ->with('posts', Post::all())
+        ->with('tags', Tag::all());
     }
 
-    public function about(){
-        $title = "Welcome to the About us page";
-        return view('pages.about')->with('title',$title);
+    public function scholarships()
+    {
+        return view('pages.scholarships')
+        ->with('categories', Category::all())
+        ->with('posts', Post::all())
+        ->with('tags', Tag::all());
     }
 
+    public function competitions()
+    {
+        return view('pages.competitions')
+        ->with('categories', Category::all())
+        ->with('posts', Post::all())
+        ->with('tags', Tag::all());
+    }
 }

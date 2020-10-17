@@ -19,10 +19,7 @@
                         <a class="nav-link" href="/scholarships">Scholarships</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/fellowships">Fellowships</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/scholarships">Training</a>
+                        <a class="nav-link" href="/competitions">Competitions</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/contact">Contact</a>

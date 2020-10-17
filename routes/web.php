@@ -17,14 +17,9 @@ use App\Http\Controllers\Blog\PostsController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('_layout.app');
-// });
 Route::get('/', 'App\Http\Controllers\WelcomeController@index');
 
 Route::get('blog/posts/{post}', [App\Http\Controllers\Blog\PostsController::class, 'show'])->name('blog.show');
-
-Route::get('/about', 'App\Http\Controllers\PagesController@about');
 
 Route::get('/contact', function () {
     return view('pages.contact');
@@ -43,8 +38,6 @@ Route::middleware(['auth'])->group(function(){
     Route::resource('categories', 'App\Http\Controllers\CategoryController');
     Route::resource('posts', 'App\Http\Controllers\PostController');
     Route::resource('tags', 'App\Http\Controllers\TagsController');
-    // Route::get('posts', 'App\Http\Controllers\PostController@trashed');
-    // Route::put('restore-posts/{post}', 'App\Http\Controllers\PostController@restore')->name('restore-posts');
 });
 
 //users route
@@ -54,3 +47,8 @@ Route::middleware(['auth', 'admin'])->group(function(){
     Route::get('users', 'App\Http\Controllers\UsersController@index');
     Route::post('users/{user}/make-admin', 'App\Http\Controllers\UsersController@makeAdmin')->name('users.make-admin');
 });
+
+//other pages
+Route::get('/jobs', 'App\Http\Controllers\PagesController@jobs');
+Route::get('/scholarships', 'App\Http\Controllers\PagesController@scholarships');
+Route::get('/competitions', 'App\Http\Controllers\PagesController@competitions');
