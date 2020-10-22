@@ -1,5 +1,5 @@
 
-.card {
+.card { 
     position: relative;
     display: -webkit-box;
     display: flex;
@@ -11,7 +11,7 @@
     background-color: #fff;
     background-clip: border-box;
     border: 0 solid rgba(0, 0, 0, 0.125);
-    border-radius: 0.25rem;
+    border-radius: 1.5rem;
 }
 
 .card-body {
@@ -80,12 +80,13 @@
 
 //custom
 .post-badge {
-    position: absolute;
+    position: relative;
     z-index: 100;
     padding: .1em 1em;
-    background: #117182;
-    color: cornsilk;
-    top: 3%;
+    background: #f53a0b25;
+    color: #f56642;
+    padding: 5px 30px;
+    border-radius: 30px;
 }
 .post-link {
     text-decoration: none !important;
@@ -97,4 +98,8 @@
     &:hover {
         color: #5e0000;
     }
+}
+
+.line-spacing {
+    line-height: 1.5;
 }

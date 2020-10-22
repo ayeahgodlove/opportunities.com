@@ -47,6 +47,7 @@
 }
 
 .homepage__banner {
+    position: relative;
     background: linear-gradient(to bottom left, #df4545, #f56642);
     height: 100vh !important;
     display: flex;
@@ -74,6 +75,14 @@
             }
         }
     }
+}
+
+.share__info {
+    position: fixed;
+    left: 0;
+    top: 30%;
+    z-index: 1000;
+    // background: #3eaec2 !important;
 }
 
 /* Breakpoint Desktop */

@@ -3,7 +3,7 @@
         <div class="row justify-content-center">
             <div class="col-11 col-md-3 about__us mb-3 mb-lg-0">
                 <h4>About Us</h4>
-                <div class="well">
+                <div class="well"> 
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat quasi tempora odio itaque qui exercitationem praesentium voluptates perferendis sit suscipit?
                 </div>
             </div>

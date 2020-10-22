@@ -4,8 +4,8 @@
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     flex-direction: column;
-    padding-top: 7rem;
-    padding-bottom: 7rem;
+    padding-top: 1rem;
+    padding-bottom: 3rem;
 }
 .sidebar hr {
     margin-top: 30px;
@@ -13,7 +13,7 @@
     border-top-style: solid;
 }
 
-@media (max-width: 991.98px) {
+@media (min-width: 991.98px) {
     .sidebar {
         padding-top: 5rem;
         padding-bottom: 5rem;

@@ -15,16 +15,14 @@ textarea.custom-input {
     padding: 1rem;
 }
 
-
-// inputs 
+// inputs
 input[type="text"] {
-    position: relative; 
+    position: relative;
 }
 
 input {
-    font-family: 'FontAwesome';
+    font-family: "FontAwesome";
 }
-
 
 // icon-span
 
@@ -36,4 +34,33 @@ input {
     z-index: 2;
     color: #201d1d;
     font-size: 25px !important;
+}
+
+.input-group {
+    width: 70%;
+    input {
+        border: none;
+    }
+    .form-control {
+        height: 45px !important;
+        border-bottom-left-radius: 30px !important;
+        border-top-left-radius: 30px !important;
+        padding: 2px 20px;
+    }
+    .btn-submit {
+        height: 45px !important;
+        border-bottom-right-radius: 30px !important;
+        border-top-right-radius: 30px !important;
+        border-bottom-left-radius: 0 !important;
+        border-top-left-radius: 0 !important;
+        background: #f56642;
+        color: #fff;
+        padding: 5px 35px;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .input-group {
+        width: 40%;
+    }
 }

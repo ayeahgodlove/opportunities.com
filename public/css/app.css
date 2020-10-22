@@ -17049,6 +17049,40 @@ readers do not read off random characters that represent icons */
   font-weight: 400;
 }
 
+.badge-secondary-custom {
+  border-radius: 30px;
+  padding: 7px 10px;
+  display: inline-block;
+  margin-bottom: 5px;
+  text-align: center;
+  background: #c8cfd470;
+  font-weight: lighter;
+  color: #505a6370;
+}
+
+.categories .post-badge {
+  background: #e6350998;
+  color: #f56642;
+}
+
+.categories .post-badge:hover {
+  background: #e75144;
+  color: #fff;
+}
+
+.blog__banner {
+  height: 150px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-top-left-radius: 1.5rem;
+  border-top-right-radius: 1.5rem;
+}
+
+.btn-warning-link {
+  background: #f56642;
+  color: #fff;
+}
+
 .navbar {
   z-index: 100;
 }
@@ -17088,12 +17122,21 @@ header {
   margin-top: 4rem !important;
 }
 
+.footer {
+  background: linear-gradient(30deg, #ea5643, #df4545);
+}
+
 .footer h4 {
-  color: #6574cd;
+  color: #fff;
 }
 
 .footer ul li {
   list-style: none;
+}
+
+.footer ul li a {
+  text-decoration: none;
+  color: #fff;
 }
 
 .footer .social__icons {
@@ -17168,6 +17211,7 @@ header {
 }
 
 .homepage__banner {
+  position: relative;
   background: linear-gradient(to bottom left, #df4545, #f56642);
   height: 100vh !important;
   display: flex;
@@ -17197,6 +17241,13 @@ header {
 
 .homepage__banner .card .card-body h1 {
   font-size: 32px;
+}
+
+.share__info {
+  position: fixed;
+  left: 0;
+  top: 30%;
+  z-index: 1000;
 }
 
 /* Breakpoint Desktop */
@@ -17278,6 +17329,38 @@ input {
   font-size: 25px !important;
 }
 
+.input-group {
+  width: 70%;
+}
+
+.input-group input {
+  border: none;
+}
+
+.input-group .form-control {
+  height: 45px !important;
+  border-bottom-left-radius: 30px !important;
+  border-top-left-radius: 30px !important;
+  padding: 2px 20px;
+}
+
+.input-group .btn-submit {
+  height: 45px !important;
+  border-bottom-right-radius: 30px !important;
+  border-top-right-radius: 30px !important;
+  border-bottom-left-radius: 0 !important;
+  border-top-left-radius: 0 !important;
+  background: #f56642;
+  color: #fff;
+  padding: 5px 35px;
+}
+
+@media screen and (min-width: 992px) {
+  .input-group {
+    width: 40%;
+  }
+}
+
 .banner__container {
   padding: 0;
 }
@@ -17313,7 +17396,7 @@ input {
   background-color: #fff;
   background-clip: border-box;
   border: 0 solid rgba(0, 0, 0, 0.125);
-  border-radius: 0.25rem;
+  border-radius: 1.5rem;
 }
 
 .card-body {
@@ -17382,12 +17465,13 @@ input {
 }
 
 .post-badge {
-  position: absolute;
+  position: relative;
   z-index: 100;
   padding: 0.1em 1em;
-  background: #117182;
-  color: cornsilk;
-  top: 3%;
+  background: #f53a0b25;
+  color: #f56642;
+  padding: 5px 30px;
+  border-radius: 30px;
 }
 
 .post-link {
@@ -17402,6 +17486,10 @@ input {
   color: #5e0000;
 }
 
+.line-spacing {
+  line-height: 1.5;
+}
+
 .search {
   margin-top: -9em;
 }
@@ -17409,8 +17497,8 @@ input {
 .sidebar {
   display: flex;
   flex-direction: column;
-  padding-top: 7rem;
-  padding-bottom: 7rem;
+  padding-top: 1rem;
+  padding-bottom: 3rem;
 }
 
 .sidebar hr {
@@ -17419,7 +17507,7 @@ input {
   border-top-style: solid;
 }
 
-@media (max-width: 991.98px) {
+@media (min-width: 991.98px) {
   .sidebar {
     padding-top: 5rem;
     padding-bottom: 5rem;

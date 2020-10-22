@@ -35,4 +35,24 @@
             </div>
         </div>
     </div>
+
+    <div class="border-0 shadow-sm rounded-0 share__info">
+        <ul class="list-group">
+            <li class="list-group-item">
+                <span class="fab fa-facebook fa-2x"></span>
+            </li>
+            <li class="list-group-item">
+                <span class="fab fa-twitter fa-2x"></span>
+            </li>
+            <li class="list-group-item">
+                <span class="fab fa-whatsapp fa-2x"></span>
+            </li>
+            <li class="list-group-item">
+                <span class="fab fa-linkedin fa-2x"></span>
+            </li>
+            <li class="list-group-item">
+                <span class="fab fa-share fa-2x"></span>
+            </li>
+        </ul>
+    </div>
 </div>

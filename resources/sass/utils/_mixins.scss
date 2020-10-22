@@ -1,3 +1,36 @@
 @mixin shadow() {
     box-shadow: 1px 3px 10px #18181821;
 }
+
+.badge-secondary-custom {
+    border-radius: 30px;
+    padding: 7px 10px;
+    display: inline-block;
+    margin-bottom: 5px;
+    text-align: center;
+    background: #c8cfd470;
+    font-weight: lighter;
+    color: #505a6370;
+}
+.categories {
+    .post-badge {
+        background: #e6350998;
+        color: #f56642;
+        &:hover {
+            background: #e75144;
+            color: #fff;
+        }
+    }
+}
+
+.blog__banner {
+    height: 150px;
+    object-fit: cover;
+    border-top-left-radius: 1.5rem;
+    border-top-right-radius: 1.5rem;
+}
+
+.btn-warning-link {
+    background:#f56642;
+    color: #fff;
+}
