@@ -1,4 +1,7 @@
 <div class="card hover-shadow-7 my-8">
+    <div class="post-badge">
+        <span class="badge">{{ $post->category->name}}</span>
+    </div>
     <div class="row">
         <div class="col-md-4">
             <a href="{{ route('blog.show', $post->id) }}">
@@ -11,7 +14,7 @@
             <div class="p-7">
                 <h4>{{ $post->title }}</h4>
                 <p>{{ $post->description }}</p>
-                <a class="small ls-1" href="{{ route('blog.show', $post->id) }}">Read More <span
+                <a class="small ls-1 post-link" href="{{ route('blog.show', $post->id) }}">Read More <span
                         class="pl-1">&xrarr;</span></a>
             </div>
         </div>

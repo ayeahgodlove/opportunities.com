@@ -1,66 +1,111 @@
-.carousel {
-    width: 100%;
-    height: 60vh;
-    .carousel-item {
-        img {
-            height: 55vh;
-            width: 100vw;
-            object-fit: cover;
-        }
-    }
-
-    // carousel controls
-    .carousel-controls-btns {
+.img-container {
+    position: relative;
+    background: linear-gradient(30deg, #e05f3f, #3eaec2);
+    padding: 1em;
+    height: 310px !important;
+    width: 310px;
+    text-align: center !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1000px !important;
+    img.banner {
         position: relative;
-        bottom: 50%;
-        width: 95%;
-        margin-left: auto;
-        margin-right: auto;
+        object-fit: cover;
+        width: 250px;
+        height: 250px;
+        border-radius: 1000px !important;
     }
 
-    // Previous and next buttons
-    .carousel-control-prev,
-    .carousel-control-next {
-        z-index: 10;
-        opacity: 1 !important;
-        border: 1px solid #ffffff;
-        border-radius: 50%;
-        width: 20px;
-        height: 20px;
+    .avatar {
+        position: absolute !important;
+        width: 90px;
+        height: 90px;
+        border-radius: 1000px !important;
+        padding: 0.6em;
+        background: linear-gradient(30deg, #571f23, #e05f3f);
+        img {
+            border-radius: 1000px !important;
+            object-fit: cover;
+            width: 90px;
+            height: 70px;
+        }
+        z-index: 1000;
+    }
+    .avatar-top {
+        top: -10% !important;
+    }
+    .avatar-left {
+        left: -10%;
+    }
+    .avatar-right {
+        right: -10%;
+    }
+    .avatar-bottom {
+        bottom: -10%;
+    }
+}
 
-        .carousel-control-prev-icon,
-        .carousel-control-next-icon {
-            z-index: 10;
-            opacity: 1 !important;
-            height: 10px;
-            width: 10px;
-            color: #ffffff !important;
+.homepage__banner {
+    background: linear-gradient(to bottom left, #df4545, #f56642);
+    height: 100vh !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 5em;
+    border-bottom-left-radius: 15%;
+    border-bottom-right-radius: 15%;
+
+    .card {
+        z-index: 100;
+        background: transparent;
+        text-align: center;
+        .card-body {
+            border-bottom-left-radius: 15% !important;
+            border-bottom-right-radius: 15% !important;
+            border-top-left-radius: 15% !important;
+            border-top-right-radius: 15% !important;
+            a:hover {
+                font-weight: bold;
+            }
+
+            h1 {
+                font-size: 32px;
+            }
         }
     }
 }
 
 /* Breakpoint Desktop */
 @media screen and (min-width: 992px) {
-    .carousel {
-        height: 70vh;
-        .carousel-inner {
-            height: 70vh;
-
-            .carousel-item {
-                height: 70vh;
-
-                img {
-                    height: 100% !important;
-                }
-                .carousel-caption {
-                    margin-bottom: 5em;
-                    background: rgba(#251403, 0.6);
-                    // background:rgba( #6d7397, 0.5);
+    .homepage__banner {
+        padding-top: 0;
+        .card {
+            text-align: left;
+            .card-body {
+                h1 {
+                    font-size: 52px;
                 }
             }
-            // carousel controls
-            .carousel-controls-btns {
-                width: 90%;
+        }
+    }
+    .img-container {
+        padding: 2em;
+        height: 450px !important;
+        width: 450px;
+        left: -15em;
+        img.banner {
+            width: 350px;
+            height: 350px;
+        }
+
+        .avatar {
+            width: 120px;
+            height: 120px;
+            padding: 0.6em;
+            img {
+                height: 100px;
+                width: 100px;
             }
         }
     }

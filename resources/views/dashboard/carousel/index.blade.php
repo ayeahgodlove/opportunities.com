@@ -18,7 +18,7 @@
                 @foreach ($carousel as $item)
                     <div class="row align-items-start justify-content-center">
                         <div class="col-10 col-md-4">
-                            <div class="card" style="height: 100px">
+                            <div class="card mb-3" style="height: 100px">
                                 <img src="{{ asset('storage/' . $item->image) }}" style="height: 100px; object-fit: cover;"
                                     class="card-img-top" alt="{{ $item->title }}">
                             </div>

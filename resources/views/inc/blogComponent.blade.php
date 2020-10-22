@@ -1,6 +1,9 @@
     <div class="col-md-8 col-xl-9 mx-auto blog__component">
         @foreach ($posts as $post)
             <div class="card hover-shadow-7 my-8">
+                <div class="post-badge">
+                    <span class="badge">{{ $post->category->name}}</span>
+                </div>
                 <div class="row">
                     <div class="col-md-4">
                         <a href="{{route('blog.show', $post->id)}}">

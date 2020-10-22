@@ -49,31 +49,52 @@
 
 .mt-8,
 .my-8 {
-    margin-top: 5rem !important;
+    margin-top: 5rem;
 }
 
 .mr-8,
 .mx-8 {
-    margin-right: 5rem !important;
+    margin-right: 5rem;
 }
 
 .mb-8,
 .my-8 {
-    margin-bottom: 5rem !important;
+    margin-bottom: 5rem;
 }
 
 .ml-8,
 .mx-8 {
-    margin-left: 5rem !important;
+    margin-left: 5rem;
 }
 
 .fit-cover {
     object-fit: cover;
 }
 .p-7 {
-    padding: 3rem !important;
+    padding: 3rem;
 }
 .ls-1,
 .letter-spacing-1 {
     letter-spacing: 1px;
+}
+
+//custom
+.post-badge {
+    position: absolute;
+    z-index: 100;
+    padding: .1em 1em;
+    background: #117182;
+    color: cornsilk;
+    top: 3%;
+}
+.post-link {
+    text-decoration: none !important;
+    padding: .6em 1em;
+    border: none;
+    background: #f8fafc;
+    color: #117182;
+
+    &:hover {
+        color: #5e0000;
+    }
 }

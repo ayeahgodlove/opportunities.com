@@ -9,12 +9,6 @@
                 @foreach ($posts as $post)
                     @if ($post->category->name == 'Miscellaneous')
                         @include('inc.categories.post')
-                    @else
-                        <div class="card">
-                            <div class="card-body">
-                                <h3>Miscellaneous not available at the moment</h3>
-                            </div>
-                        </div>
                     @endif
                 @endforeach
             </div>

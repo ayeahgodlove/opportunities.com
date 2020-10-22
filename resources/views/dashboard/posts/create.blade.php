@@ -36,7 +36,8 @@
 
                 <div class="form-group">
                     <label for="published_at">Published At</label>
-                    <input type="text" name="published_at" id="published_at" class="form-control" value="{{ isset($post) ? $post->published_at : ''}}" />
+                    <input type="text" name="published_at" id="published_at" class="form-control"
+                        value="{{ isset($post) ? $post->published_at : '' }}" />
                 </div>
 
                 <div class="form-group">
@@ -71,33 +72,32 @@
                 @if ($tags->count() > 0)
                     <div class="form-group">
                         <label for="tags">Tags</label>
-                        <select name="tags[]" id="tags" class="form-control" multiple>
+                        <select name="tags[]" id="tags" class="form-control tags-selector" multiple="multiple">
                             @foreach ($tags as $tag)
-                                <option value="{{ $tag->id }}"
-                                   @if (isset($post))
+                                <option value="{{ $tag->id }}" @if (isset($post))
                                     @if ($post->hasTag($tag->id)))
                                         selected
                                     @endif
-                                   @endif
-                                    >{{ $tag->name }}</option>
-                            @endforeach
-                        </select>
-                    </div>
-                @endif
-
-                <div class="form-group">
-                    <label for="link">Website Links</label>
-                    <input type="text" name="link" id="link" class="form-control" placeholder="Input Website links"
-                        value="{{ isset($post) ? $post->link : '' }}" />
-                </div>
-
-                <div class="form-group">
-                    <button type="submit" class="btn btn-success">
-                        {{ isset($post) ? 'Update Post' : 'Add Post' }}
-                    </button>
-                </div>
-            </form>
+                            @endif
+                            >{{ $tag->name }}</option>
+                @endforeach
+                </select>
         </div>
+        @endif
+
+        <div class="form-group">
+            <label for="link">Website Links</label>
+            <input type="text" name="link" id="link" class="form-control" placeholder="Input Website links"
+                value="{{ isset($post) ? $post->link : '' }}" />
+        </div>
+
+        <div class="form-group">
+            <button type="submit" class="btn btn-success">
+                {{ isset($post) ? 'Update Post' : 'Add Post' }}
+            </button>
+        </div>
+        </form>
+    </div>
     </div>
 @endsection
 
@@ -106,10 +106,16 @@
         integrity="sha512-S9EzTi2CZYAFbOUZVkVVqzeVpq+wG+JBFzG0YlfWAR7O8d+3nC+TTJr1KD3h4uh9aLbfKIJzIyTWZp5N/61k1g=="
         crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
 
     <script>
         flatpickr('#published_at', {
             enableTime: true
+        });
+
+        // In your Javascript (external .js resource or <script> tag)
+        $(document).ready(function() {
+            $('.tags-selector').select2();
         });
 
     </script>
@@ -120,4 +126,6 @@
         integrity="sha512-EQF8N0EBjfC+2N2mlaH4tNWoUXqun/APQIuFmT1B+ThTttH9V1bA0Ors2/UyeQ55/7MK5ZaVviDabKbjcsnzYg=="
         crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
 @endsection

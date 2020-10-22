@@ -9,12 +9,6 @@
                 @foreach ($posts as $post)
                     @if ($post->category->name == 'Competitions')
                         @include('inc.categories.post')
-                    @else
-                        <div class="card">
-                            <div class="card-body">
-                                <h3>Competitions not available at the moment</h3>
-                            </div>
-                        </div>
                     @endif
                 @endforeach
             </div>

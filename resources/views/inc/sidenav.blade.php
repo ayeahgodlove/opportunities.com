@@ -1,5 +1,5 @@
 <div class="col-md-4 col-xl-3">
-    <div class="sidebar px-4 py-md-0">
+    <div class="sidebar px-4 my-md-8 py-md-0">
 
         <h6 class="sidebar-title">Search</h6>
         <form class="input-group" target="#" method="GET">
@@ -14,7 +14,7 @@
         <h6 class="sidebar-title">Categories</h6>
         <div class="row link-color-default fs-14 lh-24">
             @foreach ($categories as $category)
-                <div class="col-6 nav-item"><a href="#" class="nav-link p-0">{{ $category->name }}</a></div>
+                <div class="col-6 nav-item"><a href="#" class="nav-link badge badge-info text-white">{{ $category->name }}</a></div>
             @endforeach
         </div>
 
@@ -22,7 +22,7 @@
 
         <h6 class="sidebar-title">Top posts</h6>
         @foreach ($posts as $post)
-            <a class="media text-default align-items-center mb-5 nav-link p-0" href="{{route('blog.show', $post->id)}}">
+            <a class="media text-default align-items-center mb-3 nav-link p-0" href="{{route('blog.show', $post->id)}}">
                 <img class="rounded w-65px mr-4" alt="{{$post->title}}" src="{{ asset('storage/' . $post->image) }}">
                 <p class="media-body small-2 lh-4 mb-0">{{$post->title}}</p>
             </a>

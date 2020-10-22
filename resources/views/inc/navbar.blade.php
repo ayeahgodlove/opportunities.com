@@ -1,8 +1,8 @@
 <header>
-    <nav class="navbar navbar-expand-lg navbar-light navbar-stick-dark shadow-sm" data-navbar="sticky">
+    <nav class="navbar navbar-expand-lg navbar-light navbar-stick-dark bg-white navbar-sticky-top shadow-sm" data-navbar="sticky">
         <div class="container">
             <a class="navbar-brand" href="{{ url('/') }}">
-                {{ config('app.name', 'GlobalOpportunities') }}
+                <img src="{{asset('img/logoGP.png')}}" alt="">
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
