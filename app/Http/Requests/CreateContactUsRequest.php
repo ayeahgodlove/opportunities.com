@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class CreateContactRequest extends FormRequest
+class CreateContactUsRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,10 +24,11 @@ class CreateContactRequest extends FormRequest
     public function rules()
     {
         return [
-            'name'=>'required',
-            'email' => 'required',
-            'subject' => 'required',
-            'message' => 'required',
+            'name' => 'required',
+            'email' => 'required|email',
+            'phone' => 'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:10',
+            'subject'=>'required',
+            'message' => 'required'
         ];
     }
 }

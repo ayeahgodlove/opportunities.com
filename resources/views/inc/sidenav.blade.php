@@ -1,5 +1,5 @@
 <div class="col-md-4 col-xl-3">
-    <div class="sidebar px-4 py-md-0">
+    <div class="sidebar px-4 py-md-0"> 
      
         <h6 class="sidebar-title">Categories</h6>
         <div class="row d-lg-block link-color-default fs-14 lh-24 categories">

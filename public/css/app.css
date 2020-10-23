@@ -17083,6 +17083,36 @@ readers do not read off random characters that represent icons */
   color: #fff;
 }
 
+.pagination__section nav {
+  display: flex;
+  justify-content: space-between !important;
+}
+
+.pagination__section nav a {
+  text-decoration: none !important;
+  color: brown;
+}
+
+.fab {
+  font-size: 20px;
+}
+
+.fa-facebook {
+  color: #117182;
+}
+
+.fa-twitter {
+  color: #3eaec2;
+}
+
+.fa-whatsapp {
+  color: #4caf50;
+}
+
+.fa-linkedin {
+  color: #117182;
+}
+
 .navbar {
   z-index: 100;
 }

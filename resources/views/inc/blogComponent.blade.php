@@ -1,4 +1,4 @@
-@foreach ($posts as $post)
+@forelse ($posts as $post)
     <div class="col-11 col-md-6 col-xl-4 mx-auto blog__component">
         <div class="card hover-shadow-7 mb-3">
             <a href="{{ route('blog.show', $post->id) }}">
@@ -18,4 +18,9 @@
             </div>
         </div>
     </div>
-@endforeach
+@empty
+    {{-- Message to display if count is zero --}}
+    <p class="text-left">
+        No results found for query <strong>{{request()->query('search')}}</strong>
+    </p>
+@endforelse

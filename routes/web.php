@@ -5,6 +5,7 @@ use App\Http\Controllers\PagesController;
 use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\Blog\PostsController;
+use App\Http\Controllers\ContactUsFormController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,12 +22,16 @@ Route::get('/', 'App\Http\Controllers\WelcomeController@index');
 
 Route::get('blog/posts/{post}', [App\Http\Controllers\Blog\PostsController::class, 'show'])->name('blog.show');
 
-Route::get('/contact', function () {
-    return view('pages.contact');
-});
-Route::get('/search', function () {
-    return view('pages.search');
-});
+//contact form
+Route::get('/contact', [
+    'uses' => 'App\Http\Controllers\ContactUsFormController@createForm'
+]);
+// Post contact form data
+Route::post('/contact', [
+    'uses' => 'App\Http\Controllers\ContactUsFormController@contactUsForm',
+    'as' => 'contact.store'
+]);
+
 Route::get('/account', function () {
     return view('dashboard.account.index');
 });

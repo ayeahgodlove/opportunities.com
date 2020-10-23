@@ -8,7 +8,7 @@
           {{-- check for errors --}}
           @include('inc._partials.errors')
             <form action="{{isset($category) ? route('categories.update', $category->id) : route('categories.store')}}" method="POST">
-                @csrf
+                @csrf 
                 @if (isset($category))
                     @method('PUT')
                 @endif

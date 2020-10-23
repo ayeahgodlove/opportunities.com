@@ -1,7 +1,7 @@
 <div class="card hover-shadow-7 my-8">
-    <div class="post-badge">
+    {{-- <div class="post-badge">
         <span class="badge">{{ $post->category->name}}</span>
-    </div>
+    </div> --}}
     <div class="row">
         <div class="col-md-4">
             <a href="{{ route('blog.show', $post->id) }}">

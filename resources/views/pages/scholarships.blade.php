@@ -14,5 +14,6 @@
             </div>
             @include('inc.sidenav')
         </div>
+        @include('inc.social_media')
     </div>
 @endsection
