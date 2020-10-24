@@ -8,7 +8,7 @@
     <div class="container">
         <div class="row justify-content-center my-5">
             <form class="input-group" action="{{ url('/') }}" method="GET">
-                <input type="text" class="form-control shadow-sm" name="search" id="search" value="{{ request()->query('search') }}">
+                <input type="text" class="form-control shadow-sm" name="search" id="search" value="{{ request()->query('search') }}" placeholder="Search...">
                 <button type="submit" class="shadow-sm btn btn-warning btn-submit">Search</button>
             </form>
         </div>

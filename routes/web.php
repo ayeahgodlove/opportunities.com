@@ -53,11 +53,7 @@ Route::middleware(['auth', 'admin'])->group(function(){
     Route::post('users/{user}/make-admin', 'App\Http\Controllers\UsersController@makeAdmin')->name('users.make-admin');
 });
 
-//other pages
-Route::get('/jobs', 'App\Http\Controllers\PagesController@jobs');
-Route::get('/scholarships', 'App\Http\Controllers\PagesController@scholarships');
-Route::get('/competitions', 'App\Http\Controllers\PagesController@competitions');
-Route::get('/miscellaneous', 'App\Http\Controllers\PagesController@miscellaneous');
-
 // Home Page carousel
 Route::resource('carousel', 'App\Http\Controllers\CarouselController');
+//show categories
+Route::get('category/{id}', 'App\Http\Controllers\PagesController@showCategories');

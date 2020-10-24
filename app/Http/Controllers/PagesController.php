@@ -9,39 +9,12 @@ use App\Models\Tag;
 
 class PagesController extends Controller
 {
-    //
-    public function jobs()
+    public function showCategories($id) 
     {
-        $posts = Post::where('category_id', '=', 1)->get();
-        return view('pages.jobs')
-        ->with('posts', $posts)
-        ->with('categories', Category::all())
-        ->with('tags', Tag::all());
-    }
-
-    public function scholarships()
-    {
-        $posts = Post::where('category_id', '=', 2)->get();
-        return view('pages.scholarships')
-        ->with('categories', Category::all())
-        ->with('posts', $posts)
-        ->with('tags', Tag::all());
-    }
-
-    public function competitions()
-    {
-        $posts = Post::where('category_id', '=', 3)->get();
-        return view('pages.competitions')
-        ->with('categories', Category::all())
-        ->with('posts', $posts)
-        ->with('tags', Tag::all());
-    }
-
-    public function miscellaneous()
-    {
-        return view('pages.miscellaneous')
-        ->with('categories', Category::all())
-        ->with('posts', Post::all())
-        ->with('tags', Tag::all());
+        $category_posts = Post::where('category_id', $id)->get();
+        return view('pages.categories')
+            ->with('posts', $category_posts)
+            ->with('categories', Category::all())
+            ->with('tags', Tag::all());
     }
 }

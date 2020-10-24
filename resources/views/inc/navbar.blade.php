@@ -11,18 +11,19 @@
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <!-- Left Side Of Navbar -->
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/jobs">Jobs</a>
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown">Opportunities</a>
+                        <ul class="dropdown-menu">
+                            <?php $cats=DB::table('categories')->get(); ?>
+                            @foreach ($cats as $cat)
+                                <a class="dropdown-item nav-link" href="{{ url('category', $cat->id) }}">{{$cat->name}}</a>
+                            @endforeach
+                           
+                        </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/scholarships">Scholarships</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/competitions">Competitions</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/miscellaneous">Miscellanous</a>
+                        <a class="nav-link" href="/jobs">About</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/contact">Contact</a>
