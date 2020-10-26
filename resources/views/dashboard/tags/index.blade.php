@@ -38,6 +38,8 @@
             @else
                 <h3 class="text-center">No Tags yet</h3>
             @endif
+
+            {{ $tags->links() }}
         </div>
     </div>
 @endsection

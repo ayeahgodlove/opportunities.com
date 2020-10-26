@@ -38,6 +38,7 @@
             @else
                 <h3 class="text-center">No categories available yet</h3>
             @endif
+            {{ $categories->links() }}
         </div>
     </div>
 @endsection

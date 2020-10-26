@@ -41,11 +41,15 @@
                         <li class="list-group-item">
                             <a href="{{ route('carousel.index') }}">Carousel</a>
                         </li>
+                        <li class="list-group-item">
+                            <a href="{{ route('abouts.index') }}">Abouts</a>
+                        </li>
                     </ul>
                 </div>
             </div>
 
             <div class="col-md-8 mt-3 mt-md-0">
+                {{-- @include('dashboard.welcome') --}}
                 @yield('content1')
             </div>
         </div>

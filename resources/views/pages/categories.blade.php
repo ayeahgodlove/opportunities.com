@@ -11,14 +11,18 @@
             </form>
         </div>
         <div class="row justify-content-center align-items-center my-3 my-lg-5">
+            @include('inc.sidenav')
             <div class="col-md-8 col-xl-9">
                 <div class="row justify-content-start">
                     @include('inc.blogComponent')
                 </div>
             </div>
-            @include('inc.sidenav')
         </div>
 
-        @include('inc.social_media')
+        {{-- @include('inc.social_media') --}}
     </div>
+@endsection
+
+@section('scripts')
+    <!-- Go to www.addthis.com/dashboard to customize your tools -->
 @endsection

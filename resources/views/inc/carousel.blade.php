@@ -36,5 +36,5 @@
         </div>
     </div>
 
-    @include('inc.social_media')
+    {{-- @include('inc.social_media') --}}
 </div>

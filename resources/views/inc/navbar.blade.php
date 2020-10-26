@@ -12,9 +12,12 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <!-- Left Side Of Navbar -->
                 <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Welcome</a>
+                    </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" data-toggle="dropdown">Opportunities</a>
-                        <ul class="dropdown-menu">
+                        <ul class="dropdown-menu px-3">
                             <?php $cats=DB::table('categories')->get(); ?>
                             @foreach ($cats as $cat)
                                 <a class="dropdown-item nav-link" href="{{ url('category', $cat->id) }}">{{$cat->name}}</a>
@@ -23,15 +26,11 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/jobs">About</a>
+                        <a class="nav-link" href="/about">About</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/contact">Contact</a>
                     </li>
-                </ul>
-
-                <!-- Right Side Of Navbar -->
-                <ul class="navbar-nav ml-auto">
                     <!-- Authentication Links -->
                     @guest
                         <li class="nav-item">
@@ -49,7 +48,8 @@
                                 {{ Auth::user()->name }}
                             </a>
 
-                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown"> 
+                                <a href="{{route('Dashboard')}}" class="dropdown-item">{{__('Dashboard')}}</a>
                                 <a href="{{route('users.edit-profile')}}" class="dropdown-item">{{__('My Profile')}}</a>
                                 <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                          document.getElementById('logout-form').submit();">
@@ -62,6 +62,11 @@
                             </div>
                         </li>
                     @endguest
+                </ul>
+
+                <!-- Right Side Of Navbar -->
+                <ul class="navbar-nav ml-auto">
+                    
                 </ul>
             </div>
         </div>

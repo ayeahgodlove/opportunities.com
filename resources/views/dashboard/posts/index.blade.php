@@ -17,7 +17,7 @@
                     <div class="col-md-2 d-none d-md-block"><b></b></div>
                 </div>
                 @foreach ($posts as $post)
-                    <div class="row align-items-start justify-content-center">
+                    <div class="row align-items-start justify-content-center mb-3">
                         <div class="col-10 col-md-3">
                             <div class="card" style="height: 100px">
                                 <img src="{{ asset('storage/' . $post->image) }}" style="height: 100px; object-fit: cover;"
@@ -54,6 +54,7 @@
             @else
                 <h3 class="text-center">No post yet</h3>
             @endif
+            {{ $posts->links() }}
         </div>
     </div>
 @endsection

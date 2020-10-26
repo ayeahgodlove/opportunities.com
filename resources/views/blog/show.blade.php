@@ -4,7 +4,7 @@
 @endsection
 @section('content')
     <div class="section py-3 py-lg-5">
-        @include('inc.social_media')
+        {{-- @include('inc.social_media') --}}
         <div class="container bg-white p-3">
 
             <div class="text-center mt-5">

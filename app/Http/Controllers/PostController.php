@@ -22,7 +22,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        return view('dashboard.posts.index')->with('posts', Post::all());
+        return view('dashboard.posts.index')->with('posts', Post::simplePaginate(4));
     }
 
     /**

@@ -43,6 +43,7 @@ Route::middleware(['auth'])->group(function(){
     Route::resource('categories', 'App\Http\Controllers\CategoryController');
     Route::resource('posts', 'App\Http\Controllers\PostController');
     Route::resource('tags', 'App\Http\Controllers\TagsController');
+    Route::resource('abouts', 'App\Http\Controllers\AboutsController');
 });
 
 //users route

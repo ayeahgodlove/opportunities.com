@@ -17,4 +17,9 @@ class PagesController extends Controller
             ->with('categories', Category::all())
             ->with('tags', Tag::all());
     }
+
+    public function about()
+    {
+        return view('pages.about');
+    }
 }

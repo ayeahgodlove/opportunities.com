@@ -13,7 +13,8 @@
             <span class="fab fa-linkedin"></span>
         </li>
         <li class="list-group-item">
-            <span class="fab fa-share"></span>
+            <span class="fas fa-share-alt"></span>
         </li>
     </ul>
 </div>
+
